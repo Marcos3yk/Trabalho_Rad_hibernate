@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="trabalhorad2.controllerTelas.TelaPrincipalController">
+    <children>
+      <Button fx:id="cadastro" layoutX="8.0" layoutY="121.0" mnemonicParsing="false" onAction="#aoClicarCadastro" prefHeight="145.0" prefWidth="189.0">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/icones/cadastro.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="87.0" layoutY="289.0" text="Cadastro" />
+      <Button layoutX="200.0" layoutY="121.0" mnemonicParsing="false" onAction="#aoClicarPedido" prefHeight="145.0" prefWidth="189.0">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/icones/pedidos.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="294.0" layoutY="289.0" text="Pedidos" />
+      <Button layoutX="397.0" layoutY="124.0" mnemonicParsing="false" onAction="#contratos" prefHeight="145.0" prefWidth="189.0">
+         <graphic>
+            <ImageView fitHeight="145.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/icones/contrato.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="464.0" layoutY="289.0" text="Contratos" />
+   </children>
+</AnchorPane>

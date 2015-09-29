@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhorad2.controllerTelas.TelaContratosController">
+   <children>
+      <ComboBox fx:id="cbCliente" layoutX="75.0" layoutY="14.0" prefWidth="150.0" />
+      <Label layoutX="14.0" layoutY="18.0" text="Cliente" />
+      <Button layoutX="336.0" layoutY="14.0" mnemonicParsing="false" onAction="#buscarPorCliente" text="Localizar" />
+      <DatePicker fx:id="dpIniEve" layoutX="109.0" layoutY="102.0" />
+      <Label layoutX="19.0" layoutY="106.0" text="Data Inicial" />
+      <Label layoutX="19.0" layoutY="65.0" text="Buscar por Data do Evento" />
+      <Label layoutX="336.0" layoutY="106.0" text="Data Final" />
+      <DatePicker fx:id="dpFimEve" layoutX="426.0" layoutY="102.0" />
+      <Label layoutX="19.0" layoutY="146.0" text="Buscar por Data De Contratos" />
+      <Label layoutX="19.0" layoutY="183.0" text="Data Inicial" />
+      <DatePicker fx:id="dpIniPed" layoutX="109.0" layoutY="179.0" />
+      <Label layoutX="336.0" layoutY="183.0" text="Data Final" />
+      <DatePicker fx:id="dpFimPed" layoutX="426.0" layoutY="179.0" />
+      <TableView fx:id="tabelaResultados" layoutX="9.0" layoutY="244.0" prefHeight="200.0" prefWidth="673.0">
+        <columns>
+          <TableColumn fx:id="colunaCliente" prefWidth="75.0" text="Cliente" />
+            <TableColumn fx:id="colunaCodigoPedido" prefWidth="98.0" text="Codigo Pedido" />
+            <TableColumn fx:id="colunaDataContrato" prefWidth="113.0" text="Data do contrato" />
+            <TableColumn fx:id="colunaDataEvento" prefWidth="103.0" text="Data do evento" />
+            <TableColumn fx:id="colunaEvento" prefWidth="75.0" text="Evento" />
+            <TableColumn fx:id="colunaProduto" prefWidth="75.0" text="Produto" />
+            <TableColumn fx:id="colunaQtde" prefWidth="75.0" text="Quantidade" />
+            <TableColumn fx:id="colunaValor" prefWidth="75.0" text="Valor" />
+        </columns>
+      </TableView>
+      <Button layoutX="681.0" layoutY="102.0" mnemonicParsing="false" onAction="#buscarPorDataEvento" text="Localizar" />
+      <Button layoutX="686.0" layoutY="179.0" mnemonicParsing="false" onAction="#buscarPorDataDoPedido" text="Localizar" />
+   </children>
+</AnchorPane>

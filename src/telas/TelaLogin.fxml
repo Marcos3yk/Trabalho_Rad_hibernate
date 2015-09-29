@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="trabalhorad2.controllerTelas.TelaLoginController">
+   <children>
+      <Label layoutX="74.0" layoutY="113.0" text="User" />
+      <Label layoutX="74.0" layoutY="183.0" text="Senha" />
+      <TextField fx:id="tfUser" layoutX="164.0" layoutY="109.0" />
+      <PasswordField fx:id="pfSenha" layoutX="164.0" layoutY="179.0" />
+      <Button layoutX="216.0" layoutY="244.0" mnemonicParsing="false" onAction="#logar" text="Login" />
+      <Label fx:id="lbmsg" layoutX="153.0" layoutY="291.0" prefHeight="17.0" prefWidth="164.0" />
+   </children>
+</AnchorPane>

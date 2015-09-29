@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.cell.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhorad2.controllerTelas.TelaAlterarExcluirUsuarioController">
+  <children>
+      <Label layoutX="8.0" layoutY="304.0" text="Login" />
+      <Label layoutX="223.0" layoutY="304.0" text="Senha" />
+      <TextField fx:id="tfUser" layoutX="46.0" layoutY="300.0" />
+      <PasswordField fx:id="pfSenha" layoutX="263.0" layoutY="300.0" />
+      <Button layoutX="214.0" layoutY="349.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+      <Label fx:id="lbmsg" layoutX="108.0" layoutY="332.0" prefHeight="17.0" prefWidth="262.0" />
+      <Label layoutX="427.0" layoutY="304.0" text="Confirmar Senha" />
+      <PasswordField fx:id="pfConfirma" layoutX="530.0" layoutY="300.0" />
+      <Button layoutX="337.0" layoutY="349.0" mnemonicParsing="false" onAction="#alterar" text="Alterar" />
+      <TableView fx:id="tabelaUser" layoutX="153.0" layoutY="14.0" prefHeight="217.0" prefWidth="299.0">
+        <columns>
+          <TableColumn fx:id="cId" prefWidth="45.0" text="ID" >
+              <cellValueFactory>
+                       <PropertyValueFactory property="codUser" />
+               </cellValueFactory>
+          </TableColumn>
+          <TableColumn fx:id="cLogin" prefWidth="134.0" text="Login" >
+              <cellValueFactory>
+                       <PropertyValueFactory property="login" />
+                    </cellValueFactory>
+          </TableColumn>
+            <TableColumn fx:id="cSenha" prefWidth="119.0" text="Senha" >
+                <cellValueFactory>
+                       <PropertyValueFactory property="senha" />
+                    </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+   </children>   
+</AnchorPane>

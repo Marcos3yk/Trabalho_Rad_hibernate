@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhorad2.controllerTelas.TelaCadastroEventoController">
+    <children>
+      <Label layoutX="23.0" layoutY="109.0" text="Novo Evento" />
+      <TextField fx:id="tfNovoEvento" layoutX="143.0" layoutY="105.0" />
+      <Button layoutX="143.0" layoutY="169.0" mnemonicParsing="false" onAction="#salvarEvento" text="Salvar" />
+      <Label fx:id="lbmsg" layoutX="131.0" layoutY="211.0" prefHeight="17.0" prefWidth="95.0" />
+      <Button layoutX="232.0" layoutY="169.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+   </children>
+</AnchorPane>

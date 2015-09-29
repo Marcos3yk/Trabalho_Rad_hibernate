@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.cell.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhorad2.controllerTelas.TelaAlterarExcluirEventoController">
+   <children>
+      <Label layoutX="179.0" layoutY="255.0" text="Novo Evento" />
+      <TextField fx:id="tfNovoEvento" layoutX="255.0" layoutY="251.0" prefHeight="25.0" prefWidth="201.0" />
+      <Button layoutX="190.0" layoutY="320.0" mnemonicParsing="false" onAction="#alterarEvento" text="Alterar" />
+      <Label fx:id="lbmsg" layoutX="131.0" layoutY="211.0" prefHeight="17.0" prefWidth="95.0" />
+      <Button layoutX="350.0" layoutY="320.0" mnemonicParsing="false" onAction="#excluirEvento" text="Excluir" />
+      <Label fx:id="lbme" layoutX="243.0" layoutY="211.0" prefHeight="17.0" prefWidth="149.0" />
+      <Label fx:id="lbma" layoutX="226.0" layoutY="354.0" prefHeight="17.0" prefWidth="124.0" />
+      <TableView layoutX="144.0" layoutY="24.0" prefHeight="196.0" prefWidth="312.0" fx:id="tabelaEvento">
+        <columns>
+          <TableColumn fx:id="cCodEvento" prefWidth="91.0" text="Codigo Evento" >
+              <cellValueFactory>
+                       <PropertyValueFactory property="codEvento" />
+                    </cellValueFactory>
+          </TableColumn>
+          <TableColumn fx:id="cEvento" minWidth="0.0" prefWidth="220.0" text="Evento" >
+              <cellValueFactory>
+                       <PropertyValueFactory property="nomeEvento" />
+                    </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+   </children> 
+</AnchorPane>

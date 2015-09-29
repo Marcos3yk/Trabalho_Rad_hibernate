@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhorad2.controllerTelas.TelaAlterarExcluirClienteController">
+ <children>
+      <Label layoutX="22.0" layoutY="304.0" text="Nome" />
+      <TextField fx:id="tfNome" layoutX="71.0" layoutY="300.0" prefHeight="25.0" prefWidth="172.0" />
+      <Button layoutX="204.0" layoutY="342.0" mnemonicParsing="false" onAction="#alterarCliente" text="Alterar" />
+      <Label fx:id="lbmsg" layoutX="204.0" layoutY="303.0" prefHeight="17.0" prefWidth="95.0" />
+      <Button layoutX="281.0" layoutY="342.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir" />
+      <Label fx:id="lbme" layoutX="243.0" layoutY="295.0" prefHeight="17.0" prefWidth="149.0" />
+      <Label fx:id="lbma" layoutX="80.0" layoutY="286.0" prefHeight="17.0" prefWidth="124.0" />
+      <Label layoutX="267.0" layoutY="304.0" text="Email" />
+      <Label layoutX="529.0" layoutY="304.0" text="Fone" />
+      <TextField fx:id="tfEmail" layoutX="306.0" layoutY="300.0" prefHeight="25.0" prefWidth="188.0" />
+      <TextField fx:id="tfFone" layoutX="585.0" layoutY="300.0" />
+      <Button layoutX="353.0" layoutY="342.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <TableView fx:id="tabelaCliente" layoutX="77.0" layoutY="24.0" prefHeight="212.0" prefWidth="599.0">
+        <columns>
+          <TableColumn fx:id="colunaNome" prefWidth="238.0" text="Nome" >
+              <cellValueFactory>
+                       <PropertyValueFactory property="nome" />
+                    </cellValueFactory>
+          </TableColumn>
+          <TableColumn fx:id="colunaEmail" prefWidth="187.0" text="Email" >
+              <cellValueFactory>
+                       <PropertyValueFactory property="email" />
+                    </cellValueFactory>
+          </TableColumn>
+            <TableColumn fx:id="colunaTelefone" prefWidth="173.0" text="Telefone" >
+                <cellValueFactory>
+                       <PropertyValueFactory property="fone" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </children>    
+</AnchorPane>

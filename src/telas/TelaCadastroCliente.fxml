@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhorad2.controllerTelas.TelaCadastroClienteController">
+    <children>
+      <Label layoutX="33.0" layoutY="75.0" text="Nome" />
+      <Label layoutX="33.0" layoutY="141.0" text="Telefone" />
+      <Label layoutX="33.0" layoutY="215.0" text="Email" />
+      <TextField fx:id="tfNome" layoutX="151.0" layoutY="71.0" />
+      <TextField fx:id="tfTelefone" layoutX="151.0" layoutY="137.0" />
+      <TextField fx:id="tfEmail" layoutX="151.0" layoutY="211.0" />
+      <Button layoutX="151.0" layoutY="275.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Button layoutX="256.0" layoutY="275.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <Label layoutX="36.0" layoutY="14.0" text="Novo Cliente" />
+      <Label fx:id="lmsg" layoutX="88.0" layoutY="327.0" prefHeight="17.0" prefWidth="210.0" />
+   </children> 
+</AnchorPane>

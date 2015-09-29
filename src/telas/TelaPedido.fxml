@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.animation.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.cell.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhorad2.controllerTelas.TelaPedidoController">
+    <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="76.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="124.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ComboBox fx:id="cbCliente" prefWidth="150.0" GridPane.columnIndex="1" />
+            <Label text="Local Contrato" GridPane.rowIndex="1" />
+            <Label text="Cerimonial" GridPane.rowIndex="2" />
+            <Label text="Hora do Evento" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dpDataPedido" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <DatePicker fx:id="dpDataEvento" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Data Do Pedido" GridPane.rowIndex="4" />
+            <Label text="Data do Evento" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cbEvento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Clientes" />
+            <Label text="Tipo de Evento" GridPane.rowIndex="6" />
+            <TextField fx:id="tfLocalContrato" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfHora" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tfCerimonial" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="CEP" GridPane.rowIndex="10" />
+            <Label text="Rua" GridPane.rowIndex="11" />
+            <Label text="Cidade" GridPane.rowIndex="15" />
+            <Label text="Bairro" GridPane.rowIndex="13" />
+            <Label text="Numero" GridPane.rowIndex="14" />
+            <ComboBox fx:id="cbEstado" prefWidth="150.0" visibleRowCount="5" GridPane.columnIndex="1" GridPane.rowIndex="16">
+                <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Acre" />
+                   <String fx:value="Alagoas" />
+                   <String fx:value="Amapá" />
+                   <String fx:value="Amazonas" />
+                   <String fx:value="Bahia" />
+                   <String fx:value="Ceará" />
+                   <String fx:value="Distrito Federal" />
+                   <String fx:value="Espírito Santo" />
+                   <String fx:value="Goiás" />
+                   <String fx:value="Maranhão" />
+                   <String fx:value="Mato Grosso" />
+                   <String fx:value="Mato Grosso do Sul" />
+                   <String fx:value="Minas Gerais" />
+                   <String fx:value="Pará" />
+                   <String fx:value="Paraíba" />
+                   <String fx:value="Paraná" />
+                   <String fx:value="Pernambuco" />
+                   <String fx:value="Piauí" />
+                   <String fx:value="Rio de Janeiro" />
+                   <String fx:value="Rio Grande do Norte" />
+                   <String fx:value="Rio Grande do Sul" />  
+                   <String fx:value="Rondônia" /> 
+                   <String fx:value="Roraima" /> 
+                   <String fx:value="Santa Catarina" />                
+                   <String fx:value="São Paulo" /> 
+                   <String fx:value="Sergipe" /> 
+                   <String fx:value="Tocantins" />
+                   
+               </FXCollections>
+           </items>
+            </ComboBox>
+            <Label text="Estado" GridPane.rowIndex="16" />
+            <TextField fx:id="tfCep" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField fx:id="tfRua" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TextField fx:id="tfBairro" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <TextField fx:id="tfNum" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <TextField fx:id="tfCidade" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+            <ComboBox fx:id="cbProduto" prefWidth="150.0" GridPane.columnIndex="4" />
+            <Label text="Produtos" GridPane.columnIndex="3" />
+            <Label text="Quantidade" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="tfQtde" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button fx:id="btAdicionar" mnemonicParsing="false" onAction="#adicionarNaTabela" text="Adicionar" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label text="Indicação" GridPane.rowIndex="7" />
+            <TextField fx:id="tfIndicacao" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Complemento" GridPane.rowIndex="12" />
+            <TextField fx:id="tfComplemento" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Button mnemonicParsing="false" onAction="#finalizarCompra" prefHeight="25.0" prefWidth="126.0" text="Finalizar Compra" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Label text="Obs" GridPane.rowIndex="8" />
+            <TextField fx:id="tfObs" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label fx:id="lmsg" prefHeight="17.0" prefWidth="123.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Label text="Valor" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="tfValor" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tabelaProdutos" layoutX="522.0" prefHeight="200.0" prefWidth="300.0">
+        <columns>
+          <TableColumn fx:id="colunaProduto" prefWidth="75.0" text="Produto">
+             <cellValueFactory>
+                    <PropertyValueFactory property="nomeProduto" />
+                </cellValueFactory> 
+          </TableColumn>    
+          <TableColumn fx:id="colunaValor" prefWidth="75.0" text="Valor">
+              <cellValueFactory>
+                    <PropertyValueFactory property="valor" />
+                </cellValueFactory> 
+          </TableColumn>
+            <TableColumn fx:id="colunaQtde" prefWidth="75.0" text="Quantidade">
+                <cellValueFactory>
+                    <PropertyValueFactory property="qtde" />
+                </cellValueFactory>
+            </TableColumn> 
+            <TableColumn fx:id="colunaTotal" prefWidth="75.0" text="Total">
+                <cellValueFactory>
+                    <PropertyValueFactory property="valorTotal" />
+                </cellValueFactory> 
+            </TableColumn>
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
