@@ -185,18 +185,20 @@ private ObservableList<Produto> listaDeProdutos = FXCollections.observableArrayL
           ped.setItensPedidos(ListaItensPedido);
           
           Date date = Date.from(dpDataEvento.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-          Calendar cal = Calendar.getInstance();
-          cal.setTime(date);
-          ped.setDataEvento(cal);
+          //Calendar cal = Calendar.getInstance();
+          //cal.setTime(date);
+          ped.setDataEvento(date);
           
           Date date2 = Date.from(dpDataPedido.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-          Calendar cal2 = Calendar.getInstance();
-          cal2.setTime(date2);
-          ped.setDataPedido(cal2);
+          //Calendar cal2 = Calendar.getInstance();
+          //cal2.setTime(date2);
+          ped.setDataPedido(date2);
           
           PedidoService pedServ = new PedidoService();
           pedServ.salvar(ped);
-        
+          lmsg.setText("Salvo com sucesso");
+          lmsg.setVisible(true);
+          
     }
    
        

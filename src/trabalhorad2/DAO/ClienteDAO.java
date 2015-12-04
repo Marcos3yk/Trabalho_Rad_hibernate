@@ -68,7 +68,20 @@ public class ClienteDAO {
         Query consulta = em.createQuery("select c from Cliente c");
         return  consulta.getResultList();
     }
+    
+    public List<Object> buscarTodosObject() {
+        //Query consulta = em.createQuery("select c from Cliente AS c order by c.id");
 
+        Query consulta = em.createQuery("select c from Cliente c");
+        return  consulta.getResultList();
+    }
+    
+    
+    public List<Object> buscarPorIdRelatorio(Integer codCliente) {
+        Query consulta = em.createQuery("select c from Cliente c where c.codCliente = :codCliente");
+        consulta.setParameter("codCliente", codCliente);
+        return  consulta.getResultList();
+    }
     public void excluir(Cliente cliente) {
         EntityTransaction tx = em.getTransaction();
 
@@ -82,9 +95,22 @@ public class ClienteDAO {
     }
 
     public List<Cliente> buscaPorNome(String nome) {
-        Query q = em.createQuery("select c from Cliente c where c.nome=:nomeAD");
-        q.setParameter("nomeAD", nome);
+        nome = "%"+nome+"%";
+         System.out.println("Nome: "+nome);
+        //JPQL
+        
+         Query consulta = em.createQuery("select c From Cliente c  WHERE LOWER(c.nome) like :nome OR c.nome like :nome");
+         consulta.setParameter("nome", nome);
+         return (List<Cliente>) consulta.getResultList();
+    }
 
-        return q.getResultList();
+    public List<Object> buscarPorNomeRelatorio(String nome) {
+        nome = "%"+nome+"%";
+         System.out.println("Nome: "+nome);
+        //JPQL
+        
+         Query consulta = em.createQuery("select c From Cliente c  WHERE LOWER(c.nome) like :nome OR c.nome like :nome");
+         consulta.setParameter("nome", nome);
+         return (List<Object>) consulta.getResultList();
     }
 }

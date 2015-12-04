@@ -213,4 +213,9 @@ public class ProdutoDAO {
         }
     }
 */
+
+    public List<Object> buscarTodosProdutos() {
+        Query consulta = em.createQuery("select pr from Produto pr");
+        return (List<Object>) consulta.getResultList();
+    }
 }

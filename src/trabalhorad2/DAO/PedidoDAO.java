@@ -13,7 +13,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -135,4 +137,10 @@ public class PedidoDAO {
            return null;
         }
    }*/
+
+    public List<Object> buscarPorDataPedido(Date dataIni, Date dataFim) {
+        Query consulta = em.createQuery("select p from Pedido p WHERE p.datapedido >= :dataIni AND p.datapedido <= :dataFim");
+        consulta.setParameter("dataIni", dataIni).setParameter("dataFim", dataFim);
+        return  consulta.getResultList();
+    }
 }

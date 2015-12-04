@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -35,7 +36,7 @@ import static trabalhorad2.model.Produto_.codProduto;
 @Entity
 public class Pedido implements Serializable {
    @Column
-   private String  origemPedido, cerimonial, indicacao, hora, obs;
+   private String  origempedido, cerimonial, indicacao, hora, obs;
    
    //private Integer codCliente, codProduto, codPedido, codEndereco;
 
@@ -46,11 +47,11 @@ public class Pedido implements Serializable {
     
     @Temporal(TemporalType.DATE)
     @Column(nullable = true)
-    private Calendar dataEvento;
+    private Date dataevento;
     
     @Temporal(TemporalType.DATE)
     @Column(nullable = true)
-    private Calendar dataPedido;
+    private Date datapedido;
     
    
     @ManyToOne
@@ -93,20 +94,20 @@ public class Pedido implements Serializable {
         this.evento = evento;
     }
 
-    public Calendar getDataEvento() {
-        return dataEvento;
+    public Date getDataEvento() {
+        return dataevento;
     }
 
-    public void setDataEvento(Calendar dataEvento) {
-        this.dataEvento = dataEvento;
+    public void setDataEvento(Date dataEvento) {
+        this.dataevento = dataEvento;
     }
 
-    public Calendar getDataPedido() {
-        return dataPedido;
+    public Date getDataPedido() {
+        return datapedido;
     }
 
-    public void setDataPedido(Calendar dataPedido) {
-        this.dataPedido = dataPedido;
+    public void setDataPedido(Date dataPedido) {
+        this.datapedido = dataPedido;
     }
 
     public Cliente getCliente() {
@@ -138,11 +139,11 @@ public class Pedido implements Serializable {
     private List<Itempedido> itensPedidos;
 
     public String getOrigemPedido() {
-        return origemPedido;
+        return origempedido;
     }
 
     public void setOrigemPedido(String origemPedido) {
-        this.origemPedido = origemPedido;
+        this.origempedido = origemPedido;
     }
 
     public String getCerimonial() {

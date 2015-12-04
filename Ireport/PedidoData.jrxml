@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cliente" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42659ae5-3688-44ae-8569-20f3c8f39048">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="data" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT P.id, C.nome, C.email, P.dataPEDIDO,E.nomeevento, P.dataEvento,  IP.nomeproduto, IP.qtde, IP.valorTotal
+ from Cliente C JOIN Pedido P ON C.codCliente = P.codCliente_cliente Join Itempedido IP ON P.id = IP.id JOIN PRODUTO PR
+ON P.codproduto_produto = PR.codProduto JOIN EVENTO E ON P.codevento_evento = E.codevento where p.datapedido >= $P{data} and p.datapedido <= $P{data}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="datapedido" class="java.sql.Date"/>
+	<field name="nomeevento" class="java.lang.String"/>
+	<field name="dataevento" class="java.sql.Date"/>
+	<field name="nomeproduto" class="java.lang.String"/>
+	<field name="qtde" class="java.lang.Integer"/>
+	<field name="valortotal" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="155" y="31" width="148" height="20" uuid="0a3a5114-163c-430e-8845-8e796532b7b7"/>
+				<text><![CDATA[Relatorio de Pedidos por data]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="20" uuid="6fe8efa0-c40e-426c-b428-571d11638eae"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="0" width="61" height="20" uuid="f3244892-0c54-47d0-baa7-2e9e3b681f76"/>
+				<text><![CDATA[nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="0" width="61" height="20" uuid="5a2a5b1f-a585-4e24-b71b-327b30531aa5"/>
+				<text><![CDATA[email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="0" width="61" height="20" uuid="06d9e3cf-e342-487f-a81d-b51efe6586fa"/>
+				<text><![CDATA[datapedido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="0" width="61" height="20" uuid="ead10c40-1586-452f-95e4-89abac4c278b"/>
+				<text><![CDATA[nomeevento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="0" width="61" height="20" uuid="59f497f9-9ac9-4419-9f2d-3c050a0edaa3"/>
+				<text><![CDATA[dataevento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="0" width="61" height="20" uuid="6184fc1a-8fda-4396-9b84-135bbf4f56cc"/>
+				<text><![CDATA[nomeproduto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="0" width="61" height="20" uuid="04da40ee-f4e8-497f-863d-006013c51833"/>
+				<text><![CDATA[qtde]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="0" width="61" height="20" uuid="f63d6947-28a4-486f-a1cb-1dd097f62fe1"/>
+				<text><![CDATA[valortotal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="153" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="61" height="20" uuid="74c72681-ca3b-4052-8996-1ad07e06eb1d"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="61" y="0" width="61" height="20" uuid="5ef41359-ce7b-4343-94c8-4d830082898f"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="0" width="61" height="20" uuid="6760e228-077b-4465-b0c1-a92e1d860b90"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="0" width="61" height="20" uuid="417d3254-d4bd-4c40-a2fb-f975bdd1e655"/>
+				<textFieldExpression><![CDATA[$F{datapedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="0" width="61" height="20" uuid="12a87503-516b-49b5-ba24-968e812e8c82"/>
+				<textFieldExpression><![CDATA[$F{nomeevento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="61" height="20" uuid="04e7c5b9-7d81-4d82-96ed-2b3cc73ef188"/>
+				<textFieldExpression><![CDATA[$F{dataevento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="0" width="61" height="20" uuid="e9b51530-1a37-4806-a8bd-3195880555b1"/>
+				<textFieldExpression><![CDATA[$F{nomeproduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="0" width="61" height="20" uuid="fe6bd00c-d89b-4d9f-9fc0-a0b2e54eaf1a"/>
+				<textFieldExpression><![CDATA[$F{qtde}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="0" width="61" height="20" uuid="4c48f27e-f344-4add-8382-8127d757e080"/>
+				<textFieldExpression><![CDATA[$F{valortotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.cell.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -10,20 +11,21 @@
    <children>
       <ComboBox fx:id="cbCliente" layoutX="75.0" layoutY="14.0" prefWidth="150.0" />
       <Label layoutX="14.0" layoutY="18.0" text="Cliente" />
-      <Button layoutX="336.0" layoutY="14.0" mnemonicParsing="false" onAction="#buscarPorCliente" text="Localizar" />
-      <DatePicker fx:id="dpIniEve" layoutX="109.0" layoutY="102.0" />
-      <Label layoutX="19.0" layoutY="106.0" text="Data Inicial" />
-      <Label layoutX="19.0" layoutY="65.0" text="Buscar por Data do Evento" />
-      <Label layoutX="336.0" layoutY="106.0" text="Data Final" />
-      <DatePicker fx:id="dpFimEve" layoutX="426.0" layoutY="102.0" />
-      <Label layoutX="19.0" layoutY="146.0" text="Buscar por Data De Contratos" />
-      <Label layoutX="19.0" layoutY="183.0" text="Data Inicial" />
-      <DatePicker fx:id="dpIniPed" layoutX="109.0" layoutY="179.0" />
-      <Label layoutX="336.0" layoutY="183.0" text="Data Final" />
-      <DatePicker fx:id="dpFimPed" layoutX="426.0" layoutY="179.0" />
-      <TableView fx:id="tabelaResultados" layoutX="9.0" layoutY="244.0" prefHeight="200.0" prefWidth="673.0">
+      <Button layoutX="655.0" layoutY="14.0" mnemonicParsing="false" onAction="#buscarPorCliente" text="Localizar" />
+      <DatePicker fx:id="dpIniEve" layoutX="101.0" layoutY="261.0" />
+      <Label layoutX="11.0" layoutY="265.0" text="Data Inicial" />
+      <Label layoutX="8.0" layoutY="185.0" text="Buscar todos os pedidos com detalhes" />
+      <Label layoutX="328.0" layoutY="265.0" text="Data Final" />
+      <DatePicker fx:id="dpFimEve" layoutX="418.0" layoutY="261.0" />
+      <Label layoutX="11.0" layoutY="318.0" text="Buscar por Data De Contratos" />
+      <Label layoutX="14.0" layoutY="373.0" text="Data Inicial" />
+      <DatePicker fx:id="dpIniPed" layoutX="104.0" layoutY="369.0" />
+      <Label layoutX="331.0" layoutY="373.0" text="Data Final" />
+      <DatePicker fx:id="dpFimPed" layoutX="421.0" layoutY="369.0" />
+      <TableView fx:id="tabelaResultados" layoutX="16.0" layoutY="678.0" prefHeight="200.0" prefWidth="673.0">
         <columns>
           <TableColumn fx:id="colunaCliente" prefWidth="75.0" text="Cliente" />
+              
             <TableColumn fx:id="colunaCodigoPedido" prefWidth="98.0" text="Codigo Pedido" />
             <TableColumn fx:id="colunaDataContrato" prefWidth="113.0" text="Data do contrato" />
             <TableColumn fx:id="colunaDataEvento" prefWidth="103.0" text="Data do evento" />
@@ -33,7 +35,35 @@
             <TableColumn fx:id="colunaValor" prefWidth="75.0" text="Valor" />
         </columns>
       </TableView>
-      <Button layoutX="681.0" layoutY="102.0" mnemonicParsing="false" onAction="#buscarPorDataEvento" text="Localizar" />
-      <Button layoutX="686.0" layoutY="179.0" mnemonicParsing="false" onAction="#buscarPorDataDoPedido" text="Localizar" />
+      <Button layoutX="235.0" layoutY="181.0" mnemonicParsing="false" onAction="#buscarPorDataEvento" text="Gerar Relatorio" />
+      <Button layoutX="681.0" layoutY="369.0" mnemonicParsing="false" onAction="#buscarPorDataDoPedido" text="Gerar Relatorio" />
+      <Label layoutX="255.0" layoutY="18.0" text="Nome do Cliente" />
+      <TextField fx:id="tfNomeCliente" layoutX="352.0" layoutY="14.0" prefHeight="25.0" prefWidth="273.0" />
+      <TableView fx:id="tabelaCliente" layoutX="19.0" layoutY="450.0" prefHeight="200.0" prefWidth="369.0">
+        <columns>
+          <TableColumn fx:id="cId" prefWidth="44.0" text="ID">
+              <cellValueFactory>
+                        <PropertyValueFactory property="codCliente" />
+                     </cellValueFactory>
+                  </TableColumn>
+          <TableColumn fx:id="cCliente" prefWidth="122.0" text="Cliente">
+              <cellValueFactory>
+              <PropertyValueFactory property="nome" />
+            </cellValueFactory>
+                  </TableColumn>
+            <TableColumn fx:id="cEmail" prefWidth="103.0" text="Email">
+                <cellValueFactory>
+                        <PropertyValueFactory property="email" />
+                     </cellValueFactory>
+                  </TableColumn>
+            <TableColumn fx:id="cFone" prefWidth="99.0" text="Fone">
+                <cellValueFactory>
+                        <PropertyValueFactory property="fone" />
+                     </cellValueFactory>
+                  </TableColumn>
+        </columns>
+      </TableView>
+      <Button layoutX="200.0" layoutY="98.0" mnemonicParsing="false" onAction="#buscarProdutos" text="Buscar" />
+      <CheckBox fx:id="produtosCheck" layoutX="15.0" layoutY="102.0" mnemonicParsing="false" text="Todos os produtos" />
    </children>
 </AnchorPane>

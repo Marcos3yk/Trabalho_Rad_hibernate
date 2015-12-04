@@ -10,8 +10,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.Calendar;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import trabalhorad2.model.Itempedido;
 import trabalhorad2.util.ConexaoUtil;
 
@@ -21,35 +27,25 @@ import trabalhorad2.util.ConexaoUtil;
  */
 public class ItempedidoDAO {
      Connection conexao;
-    /*
-    public ItempedidoDAO(){
-        //conexao= ConexaoUtil.getConnection();
+    private final EntityManager em;
+    private final EntityManagerFactory emf;
+
+    public ItempedidoDAO() {
+        emf = Persistence.createEntityManagerFactory("TrabalhoRad2PU");
+
+        em = emf.createEntityManager();
+    }
+     
+    public List<Object> buscarPorDataPedido(Calendar dataIni, Calendar dataFim) {
+        Query consulta = em.createQuery("select ip FROM Itempedido ip WHERE ip.pedido.datapedido >= :dataIni AND ip.pedido.datapedido <= :dataFim");
+        consulta.setParameter("dataIni", dataIni).setParameter("dataFim", dataFim);
+        return  consulta.getResultList();
     }
 
-    public void salvar(Itempedido ip) throws ParseException {
-        if (ip.getId() != null) {
-            //cadastrar(ip);
-        }
+    public List<Object> buscarPorTodos() {
+        Query consulta = em.createQuery("SELECT new trabalhorad2.model.Relatorio (c.nome,c.email, p.nomeProduto, i.qtde, i.valor ) FROM Cliente c, Produto p, Itempedido i");
+               
+       
+        return  consulta.getResultList();
     }
-
-    public void salvar(Itempedido ip, Integer id) {
-        
-        String sql = "INSERT INTO itempedido (codpedido,nomeproduto,qtde,valor, valorTotal) VALUES (?,?,?,?,?)";
-        
-        try {
-            PreparedStatement preparadorSQL = conexao.prepareStatement(sql);
-            preparadorSQL.setInt(1, id);
-            preparadorSQL.setString(2, ip.getNomeProduto());
-            preparadorSQL.setInt(3, ip.getQtde());
-            preparadorSQL.setDouble(4, (ip.getValor()));
-            preparadorSQL.setDouble(5, (ip.getValorTotal()));
-            preparadorSQL.execute();
-            preparadorSQL.close();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ItempedidoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    } 
-*/
 }

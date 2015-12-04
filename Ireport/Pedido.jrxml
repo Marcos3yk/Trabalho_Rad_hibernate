@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cliente" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42659ae5-3688-44ae-8569-20f3c8f39048">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM PEDIDO]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="cerimonial" class="java.lang.String"/>
+	<field name="hora" class="java.lang.String"/>
+	<field name="indicacao" class="java.lang.String"/>
+	<field name="obs" class="java.lang.String"/>
+	<field name="origemPedido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="205" y="31" width="100" height="20" uuid="0a3a5114-163c-430e-8845-8e796532b7b7"/>
+				<text><![CDATA[Relatorio]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="69" height="20" uuid="015925dc-b3c4-494c-b52c-3c3331959863"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="0" width="69" height="20" uuid="11de5d30-2209-4fdb-ac5c-7974a6f7ff64"/>
+				<text><![CDATA[cerimonial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="69" height="20" uuid="f80d2fa5-cf13-458b-86ba-e1975aa8f856"/>
+				<text><![CDATA[hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="0" width="69" height="20" uuid="78bf67f0-88f8-439e-a6d4-f6470fb5fda3"/>
+				<text><![CDATA[indicacao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="69" height="20" uuid="37f1d338-f3e9-4c12-bebe-598739ee2474"/>
+				<text><![CDATA[obs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="0" width="69" height="20" uuid="b4730c62-2e42-4e3d-9bb5-5e886f7f8aa2"/>
+				<text><![CDATA[origemPedido]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="153" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="69" height="20" uuid="7af7c8a1-5700-450b-928f-612bcae5cc5d"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="0" width="69" height="20" uuid="ff4a5135-149c-4801-a3d9-5a749c5e2d66"/>
+				<textFieldExpression><![CDATA[$F{cerimonial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="69" height="20" uuid="e1eb9823-e64c-49ca-9d67-26e6863662bb"/>
+				<textFieldExpression><![CDATA[$F{hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="0" width="69" height="20" uuid="6e468643-7034-4a69-9ca6-218820da1cec"/>
+				<textFieldExpression><![CDATA[$F{indicacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="69" height="20" uuid="671974e5-7f45-43f8-9f8f-03fe797b9dd1"/>
+				<textFieldExpression><![CDATA[$F{obs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="0" width="69" height="20" uuid="59c1d065-858c-49db-9e94-6176d714e983"/>
+				<textFieldExpression><![CDATA[$F{origemPedido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
